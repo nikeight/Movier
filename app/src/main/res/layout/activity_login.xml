@@ -7,10 +7,12 @@
     tools:context=".Activity.LoginActivity"
     android:orientation="vertical">
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/googleSignInBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
         android:text= "@string/googleSignInBtnText" />
 
 </LinearLayout>
