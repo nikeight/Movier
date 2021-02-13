@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "954031033275",
+    "project_id": "movier-3cd82",
+    "storage_bucket": "movier-3cd82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954031033275:android:8e983ba1e819b75720529e",
+        "android_client_info": {
+          "package_name": "com.appchef.movier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954031033275-pm7pl5dhf1f88hc0agqjhpnn4qubtb53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appchef.movier",
+            "certificate_hash": "7db9b4f6d06ec7260d41557eab0bc2545e87a42e"
+          }
+        },
+        {
+          "client_id": "954031033275-qabnjf283q8r35b4sjb0qkuqtcv52v2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvDKHK7t93P_JeyNwyo2s03RYShgfMwsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954031033275-qabnjf283q8r35b4sjb0qkuqtcv52v2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,13 +1,13 @@
-package com.appchef.movier;
+package com.appchef.movier.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
+
+import com.appchef.movier.R;
 
 import java.util.Random;
 
@@ -30,11 +30,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 2500);
+        }, 2000);
     }
 
     private void setIcon(int number) {
