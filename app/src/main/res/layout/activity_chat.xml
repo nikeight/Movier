@@ -39,5 +39,4 @@
         tools:listitem="@layout/row_chat_list"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-
 </LinearLayout>

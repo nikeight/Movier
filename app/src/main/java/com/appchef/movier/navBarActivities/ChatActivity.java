@@ -2,6 +2,7 @@ package com.appchef.movier.navBarActivities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ChatActivity extends AppCompatActivity {
 
     private BottomNavigationView upperNavigationView;
+    RecyclerView matchListRv, chatListRv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +52,7 @@ public class ChatActivity extends AppCompatActivity {
     private void Init() {
         upperNavigationView = findViewById(R.id.upperNavigationBarView);
         upperNavigationView.setSelectedItemId(R.id.chatNavBar);
+        matchListRv = findViewById(R.id.matchListRv);
+        chatListRv = findViewById(R.id.chatListRv);
     }
 }
