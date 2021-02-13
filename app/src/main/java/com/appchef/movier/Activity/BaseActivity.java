@@ -1,4 +1,4 @@
-package com.appchef.movier;
+package com.appchef.movier.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.appchef.movier.R;
 import com.appchef.movier.navBarActivities.ChatActivity;
 import com.appchef.movier.navBarActivities.HomeActivity;
 import com.appchef.movier.navBarActivities.NotificaionActivity;

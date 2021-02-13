@@ -3,12 +3,10 @@ package com.appchef.movier.navBarActivities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.appchef.movier.BaseActivity;
 import com.appchef.movier.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
