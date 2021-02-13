@@ -7,12 +7,22 @@
     tools:context=".Activity.LoginActivity"
     android:orientation="vertical">
 
-    <com.google.android.gms.common.SignInButton
+    <Button
         android:id="@+id/googleSignInBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center"
         android:text= "@string/googleSignInBtnText" />
+
+    <Button
+        android:id="@+id/phoneLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phoneLoginBtn"
+        android:drawableLeft="@drawable/ic_phone_gray"
+        android:drawablePadding="5dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"/>
 
 </LinearLayout>
