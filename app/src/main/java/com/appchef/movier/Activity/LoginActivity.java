@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            ForwardToMainScreen();
+            ForwardToRegistrationScreen();
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -102,11 +102,11 @@ public class LoginActivity extends AppCompatActivity {
         // Check if the user is signed in or not.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account!= null){
-            ForwardToMainScreen();
+            ForwardToRegistrationScreen();
         }
     }
 
-    private void ForwardToMainScreen(){
+    private void ForwardToRegistrationScreen(){
         Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(mainIntent);
         finish();
