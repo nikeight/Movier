@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import com.appchef.movier.R;
+import com.appchef.movier.navBarActivities.HomeActivity;
+
+import com.appchef.movier.Activity.LoginActivity;
 
 import java.util.Random;
 
@@ -30,11 +33,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 2000);
+        }, 2500);
     }
 
     private void setIcon(int number) {

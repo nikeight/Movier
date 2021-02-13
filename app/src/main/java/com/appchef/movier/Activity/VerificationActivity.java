@@ -132,13 +132,13 @@ public class VerificationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            startActivity(new Intent(VerificationActivity.this, MainActivity.class));
+                            startActivity(new Intent(VerificationActivity.this, RegistrationActivity.class));
                             finish();
                             // ...
                         } else {
                             // Sign in failed, display a message and update the UI
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                Toast.makeText(VerificationActivity.this, "Verification filed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(VerificationActivity.this, "Verification failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

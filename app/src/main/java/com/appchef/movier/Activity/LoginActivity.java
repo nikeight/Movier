@@ -20,6 +20,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     // GoogleSignIn
     GoogleSignInOptions signInOptions;
     GoogleSignInClient mGoogleSignInClient;
+    FirebaseAuth mAuth;
 
     // Buttons
     private Button googleSignInBtn, phoneLoginBtn;
@@ -49,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Init();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -64,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void googleSignIn() {
+        mProgressDialog.setMessage("Logging In...");
         mProgressDialog.show();
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -73,27 +77,48 @@ public class LoginActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
             mProgressDialog.dismiss();
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                // ...
+            }
         }
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            // Signed in successfully, show authenticated UI.
-            ForwardToMainScreen();
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(this, ""+e.getMessage()+" "+ e.getStatusCode(), Toast.LENGTH_SHORT).show();
-        }
+    private void firebaseAuthWithGoogle(String idToken) {
+
+        mProgressDialog.setMessage("Logging In...");
+        mProgressDialog.show();
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            mProgressDialog.dismiss();
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            ForwardToMainScreen();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            mProgressDialog.dismiss();
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Sign in failure", Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
     }
 
 
@@ -102,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
         phoneLoginBtn = findViewById(R.id.phoneLoginBtn);
         mProgressDialog = new ProgressDialog(LoginActivity.this);
         mProgressDialog.setCanceledOnTouchOutside(false);
+        mAuth = FirebaseAuth.getInstance();
     }
 
     public void onStart() {
@@ -109,14 +135,14 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(tag, "In the onStart() event");
 
         // Check if the user is signed in or not.
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account!= null){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser!= null){
             ForwardToMainScreen();
         }
     }
 
     private void ForwardToMainScreen(){
-        Intent mainIntent = new Intent(LoginActivity.this,MainActivity.class);
+        Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(mainIntent);
         finish();
     }
