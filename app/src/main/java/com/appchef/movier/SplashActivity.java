@@ -22,7 +22,6 @@ public class SplashActivity extends AppCompatActivity {
 
         init();
         int number = getRandomNumber();
-        Log.d("random number", number+"");
         setIcon(number);
         splashScreenHandler();
     }
@@ -39,7 +38,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void setIcon(int number) {
-        Log.d("random number", number+" switch");
         switch (number) {
             case 1:
                 splashLogoIv.setImageResource(R.drawable.ic_foodcircle);
