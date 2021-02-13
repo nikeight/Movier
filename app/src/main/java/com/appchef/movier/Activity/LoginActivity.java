@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check if the user is signed in or not.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser!= null){
+        if (currentUser != null){
             ForwardToMainScreen();
         }
     }

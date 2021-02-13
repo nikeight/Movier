@@ -11,4 +11,7 @@
     <string name="phoneLoginWelcomeText">My number is</string>
     <string name="phoneLoginWelcomeInstruction">When you tap to continue. Tinder will send a text with verification code. Message and data rates may apply.The verification can be used to login.</string>
 
+    <string name="userOnline">online</string>
+    <string name="userOffline">offline</string>
+
 </resources>
