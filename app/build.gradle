@@ -49,4 +49,9 @@ dependencies {
     // For Auth
     implementation 'com.google.firebase:firebase-auth:20.0.2'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation "androidx.browser:browser:1.2.0"
+    //text box design
+    implementation 'com.chaos.view:pinview:1.4.3'
+    // country code picker
+    implementation 'com.hbb20:ccp:2.4.5'
 }

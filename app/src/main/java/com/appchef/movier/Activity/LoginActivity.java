@@ -35,10 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     // GoogleSignIn
     GoogleSignInOptions signInOptions;
     GoogleSignInClient mGoogleSignInClient;
-    private FirebaseAuth mAuth;
 
     // Buttons
-    private SignInButton googleSignInBtn;
+    private Button googleSignInBtn, phoneLoginBtn;
 
     // Progress Dialog
     ProgressDialog mProgressDialog;
@@ -55,7 +54,13 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         // OnClick Events.
         googleSignInBtn.setOnClickListener(view -> googleSignIn());
+        phoneLoginBtn.setOnClickListener(view -> phoneSignIn());
 
+    }
+
+    private void phoneSignIn() {
+        Intent intent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+        startActivity(intent);
     }
 
     private void googleSignIn() {
@@ -94,9 +99,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void Init() {
         googleSignInBtn = findViewById(R.id.googleSignInBtn);
+        phoneLoginBtn = findViewById(R.id.phoneLoginBtn);
         mProgressDialog = new ProgressDialog(LoginActivity.this);
         mProgressDialog.setCanceledOnTouchOutside(false);
-        mAuth = FirebaseAuth.getInstance();
     }
 
     public void onStart() {
