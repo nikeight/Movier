@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.appchef.movier">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +18,11 @@
         <activity android:name=".navBarActivities.NotificaionActivity" />
         <activity android:name=".navBarActivities.ChatActivity" />
         <activity android:name=".navBarActivities.HomeActivity">
+
+        <activity android:name=".Activity.VerificationActivity"/>
+        <activity android:name=".Activity.PhoneLoginActivity" />
+        <activity android:name=".Activity.LoginActivity"/>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BaseActivity"/>
-
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>
