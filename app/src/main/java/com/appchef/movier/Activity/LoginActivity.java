@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void ForwardToMainScreen(){
-        Intent mainIntent = new Intent(LoginActivity.this,MainActivity.class);
+        Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(mainIntent);
         finish();
     }

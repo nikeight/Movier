@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:enabled="true"
+        android:id="@+id/homeNavBar"/>
+
+    <item android:title="Chat"
+        android:enabled="true"
+        android:id="@+id/chatNavBar"/>
+
+    <item android:title="Notification"
+        android:enabled="true"
+        android:id="@+id/notificationNavBar"/>
+
+    <item android:title="Profile"
+        android:enabled="true"
+        android:id="@+id/profileNavBar"/>
+
+</menu>

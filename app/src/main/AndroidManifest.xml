@@ -18,14 +18,19 @@
         <activity android:name=".Activity.VerificationActivity"/>
         <activity android:name=".Activity.PhoneLoginActivity" />
         <activity android:name=".Activity.LoginActivity"/>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".navBarActivities.HomeActivity"/>
+        <activity android:name=".navBarActivities.ChatActivity" />
+        <activity android:name=".navBarActivities.NotificaionActivity" />
+        <activity android:name=".navBarActivities.ProfileActivity"/>
+        <activity android:name=".Activity.BaseActivity"/>
+        <activity android:name=".Activity.RegistrationActivity" />
     </application>
 
 </manifest>
