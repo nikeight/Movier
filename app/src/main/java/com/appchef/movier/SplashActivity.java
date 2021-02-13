@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private ImageView clapperBoard, foodCircleIv, musicNotesIv;
+    private ImageView splashLogoIv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class SplashActivity extends AppCompatActivity {
 
         init();
         int number = getRandomNumber();
-        Log.d("random number", number+"");
         setIcon(number);
         splashScreenHandler();
     }
@@ -39,22 +38,15 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void setIcon(int number) {
-        Log.d("random number", number+" switch");
         switch (number) {
             case 1:
-                clapperBoard.setVisibility(View.GONE);
-                foodCircleIv.setVisibility(View.VISIBLE);
-                musicNotesIv.setVisibility(View.GONE);
+                splashLogoIv.setImageResource(R.drawable.ic_foodcircle);
                 break;
             case 2:
-                clapperBoard.setVisibility(View.GONE);
-                foodCircleIv.setVisibility(View.GONE);
-                musicNotesIv.setVisibility(View.VISIBLE);
+                splashLogoIv.setImageResource(R.drawable.ic_musicalnotes);
                 break;
             default:
-                clapperBoard.setVisibility(View.VISIBLE);
-                foodCircleIv.setVisibility(View.GONE);
-                musicNotesIv.setVisibility(View.GONE);
+                splashLogoIv.setImageResource(R.drawable.ic_clapperboard);
         }
     }
 
@@ -65,8 +57,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void init() {
-        clapperBoard = findViewById(R.id.clapperBoardIv);
-        foodCircleIv = findViewById(R.id.foodCircleIv);
-        musicNotesIv = findViewById(R.id.musicNotesIv);
+        splashLogoIv = findViewById(R.id.splashLogoIv);
     }
 }
