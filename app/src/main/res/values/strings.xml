@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movier</string>
+
+    // Console OAuth2.O Id
+    <string name="default_web_client_google_key" translatable="false">954031033275-pm7pl5dhf1f88hc0agqjhpnn4qubtb53.apps.googleusercontent.com</string>
+
+    <string name="googleSignInBtnText">Google Sign in></string>
 </resources>
