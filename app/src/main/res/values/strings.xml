@@ -3,4 +3,12 @@
 
     <string name="user_name">User Name</string>
     <string name="chat_last_msg">The last message</string>
+    // Console OAuth2.O Id
+    <string name="default_web_client_google_key" translatable="false">954031033275-pm7pl5dhf1f88hc0agqjhpnn4qubtb53.apps.googleusercontent.com</string>
+
+    <string name="googleSignInBtnText">Log in with google</string>
+    <string name="phoneLoginBtn">Log in with phone number</string>
+    <string name="phoneLoginWelcomeText">My number is</string>
+    <string name="phoneLoginWelcomeInstruction">When you tap to continue. Tinder will send a text with verification code. Message and data rates may apply.The verification can be used to login.</string>
+
 </resources>
