@@ -1,8 +1,10 @@
-package com.appchef.movier;
+package com.appchef.movier.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.appchef.movier.R;
 
 public class MainActivity extends AppCompatActivity {
 
