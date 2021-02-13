@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.appchef.movier.Activity.LoginActivity;
+
 import java.util.Random;
 
 public class SplashActivity extends AppCompatActivity {
@@ -30,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
