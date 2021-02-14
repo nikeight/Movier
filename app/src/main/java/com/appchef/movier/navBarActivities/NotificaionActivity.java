@@ -32,14 +32,17 @@ public class NotificaionActivity extends AppCompatActivity {
                     case R.id.homeNavBar:
                         startActivity(new Intent(NotificaionActivity.this, HomeActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.chatNavBar:
                         startActivity(new Intent(NotificaionActivity.this, ChatActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.profileNavBar:
                         startActivity(new Intent(NotificaionActivity.this, ProfileActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                 }
                 return true;

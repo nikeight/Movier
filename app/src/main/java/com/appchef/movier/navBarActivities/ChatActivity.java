@@ -114,14 +114,17 @@ public class ChatActivity extends AppCompatActivity {
                     case R.id.homeNavBar:
                         startActivity(new Intent(ChatActivity.this, HomeActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.notificationNavBar:
                         startActivity(new Intent(ChatActivity.this, NotificaionActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.profileNavBar:
                         startActivity(new Intent(ChatActivity.this, ProfileActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                 }
                 return true;
