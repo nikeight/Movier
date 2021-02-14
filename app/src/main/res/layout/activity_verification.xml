@@ -13,7 +13,7 @@
         android:padding="30dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAlignment="center"
@@ -21,7 +21,7 @@
             android:text="Movier"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="90dp"
+            android:textSize="80dp"
             android:textAllCaps="true" />
 
         <TextView
@@ -60,15 +60,15 @@
 
         <com.chaos.view.PinView
             android:id="@+id/pin_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:itemCount="6"
             app:itemWidth="50dp"
             app:itemHeight="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            app:lineColor="@color/purple_200"
-            android:itemBackground="@color/purple_500"
+            app:lineColor="@color/colorPrimaryDark"
+            android:itemBackground="@color/white"
             style="@style/PinWidget.PinView"
             android:inputType="number"
             android:cursorVisible="true"

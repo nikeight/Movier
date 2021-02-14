@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/proceedToHomeBtn"
         android:layout_alignParentBottom="true"
+        android:text="Continue"
         android:layout_margin="16dp"/>
 
 </RelativeLayout>

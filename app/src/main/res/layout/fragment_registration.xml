@@ -16,9 +16,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold|italic"
             android:lineSpacingMultiplier="1.25"
             android:textSize="32dp"
             android:text="Create an Account" />
@@ -27,14 +28,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fullNameLayout"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             app:errorEnabled="true"
-            android:layout_margin="8dp"
-            app:boxBackgroundColor="@android:color/transparent">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:hint="Full Name"
                 android:inputType="text" />
 
@@ -44,14 +47,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/usernameLayout"
-            android:layout_margin="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             app:errorEnabled="true"
-            app:boxBackgroundColor="@android:color/transparent">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:hint="Enter your desirable username"
                 android:inputType="text"/>
 
@@ -62,9 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ageLayout"
-            android:layout_margin="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             app:errorEnabled="true"
-            app:boxBackgroundColor="@android:color/transparent">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -79,11 +87,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/contactLayout"
-            android:layout_margin="8dp"
             app:errorEnabled="true"
             app:counterEnabled="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             app:counterMaxLength="10"
-            app:boxBackgroundColor="@android:color/transparent">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -98,9 +109,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/genderLayout"
-            android:layout_margin="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             app:errorEnabled="true"
-            app:boxBackgroundColor="@android:color/transparent">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

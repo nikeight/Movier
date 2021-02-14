@@ -2,11 +2,13 @@ package com.appchef.movier.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.appchef.movier.R;
 import com.appchef.movier.navBarActivities.HomeActivity;
 
@@ -16,7 +18,7 @@ import java.util.Random;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private ImageView splashLogoIv;
+    private LottieAnimationView splashLogoIv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +45,13 @@ public class SplashActivity extends AppCompatActivity {
     private void setIcon(int number) {
         switch (number) {
             case 1:
-                splashLogoIv.setImageResource(R.drawable.ic_foodcircle);
+                splashLogoIv.setAnimation(R.raw.movie_lottie);
                 break;
             case 2:
-                splashLogoIv.setImageResource(R.drawable.ic_musicalnotes);
+                splashLogoIv.setAnimation(R.raw.music_lottie);
                 break;
             default:
-                splashLogoIv.setImageResource(R.drawable.ic_clapperboard);
+                splashLogoIv.setAnimation(R.raw.mobile_lottie);
         }
     }
 
