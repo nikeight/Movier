@@ -79,10 +79,10 @@ public class RegistrationFragment extends Fragment {
         if (!checkFullName() | !username() | !age() | !gender() | !checkContactNumber()) {
             return;
         }
-//        saveChangesToFireStore();
+
+        saveChangesToFireStore();
         Log.i(TAG,FirebaseAuth.getInstance().getUid() + ": Is the Unique Id of the User" +
                 "Username:" + usernameLayout.getEditText().getText().toString());
-        changeFragment();
     }
 
     private boolean checkContactNumber() {
@@ -167,20 +167,25 @@ public class RegistrationFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(context, "Successfully Updated the data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Successfully Registered the Data", Toast.LENGTH_SHORT).show();
                         changeFragment();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(context, "Failed to upload the data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Failed to register the data", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void changeFragment() {
-        getFragmentManager().beginTransaction()
-                .replace(R.id.registrationFrameContainer,new GenresSelectionFragment()).commit();
+        try {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.registrationFrameContainer,new GenresSelectionFragment()).commit();
+
+        }catch (NullPointerException e){
+            Log.i(TAG,Log.getStackTraceString(e));
+        }
     }
 
     private void Init(View view) {
