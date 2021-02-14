@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:id="@+id/notificationProfileImageView"
+            android:src="@drawable/ic_foodcircle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notificationUserNameTv"
+            android:text="Username"
+            android:textSize="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/notificationProfileImageView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notificationGenderTv"
+            android:text="Female"
+            android:textSize="18dp"
+            android:layout_below="@id/notificationUserNameTv"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/notificationProfileImageView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_accpet_right"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/rejectRequestIv"
+            android:id="@+id/acceptRequestIV"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_reject_close"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/rejectRequestIv"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
