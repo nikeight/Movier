@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://i.pinimg.com/564x/6f/de/85/6fde85b86c86526af5e99ce85f57432e.jpg",
+    "name": "Sofia",
+    "age": 20,
+    "location": "New York"
+  },
+  {
+    "url": "https://i.pinimg.com/474x/66/78/6c/66786c399c6bc7ad88cb28dd720fd6c7.jpg",
+    "name": "Roma",
+    "age": 22,
+    "location": "California"
+  },
+  {
+    "url": "http://i.imgur.com/N6SaAlZ.jpg",
+    "name": "Zoya",
+    "age": 23,
+    "location": "Atlantic City"
+  }
+]
