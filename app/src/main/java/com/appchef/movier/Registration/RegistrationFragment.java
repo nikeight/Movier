@@ -154,15 +154,18 @@ public class RegistrationFragment extends Fragment {
         Map<String,String> userDataMap = new HashMap<String, String>();
 
         String username = usernameLayout.getEditText().getText().toString();
+        String uniqueID = mAuth.getUid();
 
         userDataMap.put("fullName",fullNameLayout.getEditText().getText().toString());
         userDataMap.put("username",username);
         userDataMap.put("age",ageLayout.getEditText().getText().toString());
         userDataMap.put("gender",genderLayout.getEditText().getText().toString());
         userDataMap.put("contactNumber",contactLayout.getEditText().getText().toString());
+        userDataMap.put("uniqueID",uniqueID);
 
-        String uniqueID = mAuth.getUid();
-        FirebaseFirestore.getInstance().collection("users").document(uniqueID).collection(username).document(uniqueID)
+
+        if (uniqueID!=null)
+        FirebaseFirestore.getInstance().collection("users").document(uniqueID)
                 .set(userDataMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

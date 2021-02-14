@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.appchef.movier.R;
+import com.appchef.movier.navBarActivities.HomeActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -132,15 +133,26 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         Log.d(tag, "In the onStart() event");
 
+        userLoginStatus();
+    }
+
+    private void userLoginStatus() {
         // Check if the user is signed in or not.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser!= null){
-            ForwardToRegistrationScreen();
+            // Means there is user already logged IN.
+            ForwardToHomeScreen();
         }
     }
 
     private void ForwardToRegistrationScreen(){
         Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
+        startActivity(mainIntent);
+        finish();
+    }
+
+    private void ForwardToHomeScreen(){
+        Intent mainIntent = new Intent(LoginActivity.this, HomeActivity.class);
         startActivity(mainIntent);
         finish();
     }
