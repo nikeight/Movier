@@ -135,14 +135,17 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.chatNavBar:
                         startActivity(new Intent(HomeActivity.this, ChatActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.notificationNavBar:
                         startActivity(new Intent(HomeActivity.this, NotificaionActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.profileNavBar:
                         startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                 }
                 return true;
@@ -158,5 +161,11 @@ public class HomeActivity extends AppCompatActivity {
         mContext = getApplicationContext();
 
         usersList = new ArrayList<>();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }
