@@ -46,7 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemSelected = item.getItemId();
-        switch (itemSelected){
+        switch (itemSelected) {
             case 0:
             default:
                 startActivity(new Intent(BaseActivity.this, HomeActivity.class));
@@ -76,7 +76,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     void selectBottomNavigationBarItem(int itemId) {
         MenuItem item = upperNavigationView.getMenu().findItem(itemId);
         if (item != null)
-        item.setChecked(true);
+            item.setChecked(true);
     }
 
     protected abstract int getLayoutId(); // this is to return which layout(activity) needs to display when clicked on tabs.
