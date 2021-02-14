@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:labelVisibilityMode="labeled"
+    android:paddingTop="4dp"
     android:background="?android:attr/windowBackground"
     app:menu="@menu/upper_nav_bar_menu">
 

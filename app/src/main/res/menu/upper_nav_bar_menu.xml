@@ -4,18 +4,22 @@
 
     <item android:title="Home"
         android:enabled="true"
+        android:icon="@drawable/ic_home"
         android:id="@+id/homeNavBar"/>
 
     <item android:title="Chat"
         android:enabled="true"
+        android:icon="@drawable/ic_chat"
         android:id="@+id/chatNavBar"/>
 
     <item android:title="Notification"
         android:enabled="true"
+        android:icon="@drawable/ic_bell"
         android:id="@+id/notificationNavBar"/>
 
     <item android:title="Profile"
         android:enabled="true"
+        android:icon="@drawable/ic_user"
         android:id="@+id/profileNavBar"/>
 
 </menu>

@@ -24,6 +24,16 @@
             android:textSize="32dp"
             android:text="Create an Account" />
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profileIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_clapperboard"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/colorPrimary"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
