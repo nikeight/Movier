@@ -22,7 +22,7 @@ public class RegistrationActivity extends AppCompatActivity {
             public void run() {
               startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
             }
-        },2000);
+        },500);
 
     }
 }

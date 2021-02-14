@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragments.BaseProfileFragment">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/profilePictureIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        android:src="@drawable/abc_vector_test"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameTv"
+        android:layout_below="@+id/profilePictureIv"
+        android:text="confused"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="32dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/settingProfileIv"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/usernameTv"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/abc_vector_test"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingProfileIv"
+        android:text="Settings"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textSize="24dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/addMediaIv"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/usernameTv"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/abc_vector_test"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addMediaIv"
+        android:text="Add Images"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="24dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/editProfileIv"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/usernameTv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/abc_vector_test"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editProfileIv"
+        android:text="Edit Profile"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"
+        android:textSize="24dp"/>
+
+</RelativeLayout>
