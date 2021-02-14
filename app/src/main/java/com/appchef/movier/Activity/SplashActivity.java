@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import com.appchef.movier.R;
 import com.appchef.movier.navBarActivities.HomeActivity;
 
+import com.appchef.movier.Activity.LoginActivity;
+
 import java.util.Random;
 
 public class SplashActivity extends AppCompatActivity {
