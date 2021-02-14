@@ -108,15 +108,13 @@ public class LoginActivity extends AppCompatActivity {
                             mProgressDialog.dismiss();
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            ForwardToMainScreen();
+                            ForwardToRegistrationScreen();
                         } else {
                             // If sign in fails, display a message to the user.
                             mProgressDialog.dismiss();
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Sign in failure", Toast.LENGTH_SHORT).show();
                         }
-
-                        // ...
                     }
                 });
     }
@@ -136,12 +134,12 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check if the user is signed in or not.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null){
-            ForwardToMainScreen();
+        if (currentUser!= null){
+            ForwardToRegistrationScreen();
         }
     }
 
-    private void ForwardToMainScreen(){
+    private void ForwardToRegistrationScreen(){
         Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(mainIntent);
         finish();
