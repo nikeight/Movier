@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.appchef.movier.ProfileFragments.BaseProfileFragment;
 import com.appchef.movier.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +22,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         Init();
         SetUpUpperNavBar();
+        SetUpBaseFragment();
+    }
+
+    public void SetUpBaseFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.profileFrameContainer,new BaseProfileFragment(),"BaseProfileFragment")
+                .commit();
     }
 
     private void SetUpUpperNavBar() {
@@ -32,14 +40,17 @@ public class ProfileActivity extends AppCompatActivity {
                     case R.id.homeNavBar:
                         startActivity(new Intent(ProfileActivity.this, HomeActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.chatNavBar:
                         startActivity(new Intent(ProfileActivity.this, ChatActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                     case R.id.notificationNavBar:
                         startActivity(new Intent(ProfileActivity.this, NotificaionActivity.class));
                         overridePendingTransition(0, 0);
+                        finishAffinity();
                         break;
                 }
                 return true;
@@ -48,7 +59,13 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void Init() {
-        upperNavigationView = findViewById(R.id.upperNavigationBarView);
+        upperNavigationView = findViewById(R.id.upperNavBarProfile);
         upperNavigationView.setSelectedItemId(R.id.profileNavBar);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        SetUpBaseFragment();
     }
 }
