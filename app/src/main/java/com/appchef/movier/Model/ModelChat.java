@@ -2,13 +2,12 @@ package com.appchef.movier.Model;
 
 public class ModelChat {
 
-    String message, receiver, sender, timestamp, type;
-    boolean isSeen;
+    String message, receiver, sender, timestamp, type, isSeen;
 
     public ModelChat() {
     }
 
-    public ModelChat(String message, String receiver, String sender, String timestamp, String type, boolean isSeen) {
+    public ModelChat(String message, String receiver, String sender, String timestamp, String type, String isSeen) {
         this.message = message;
         this.receiver = receiver;
         this.sender = sender;
@@ -57,11 +56,11 @@ public class ModelChat {
         this.type = type;
     }
 
-    public boolean isSeen() {
+    public String getIsSeen() {
         return isSeen;
     }
 
-    public void setSeen(boolean seen) {
-        isSeen = seen;
+    public void setIsSeen(String isSeen) {
+        this.isSeen = isSeen;
     }
 }

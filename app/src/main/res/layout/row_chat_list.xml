@@ -9,7 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileIv"
@@ -58,8 +59,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
         android:layout_gravity="bottom"/>
 
 </androidx.cardview.widget.CardView>

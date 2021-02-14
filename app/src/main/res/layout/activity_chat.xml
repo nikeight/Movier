@@ -30,12 +30,6 @@
         android:paddingTop="4dp"
         android:paddingBottom="4dp"/>
 
-    <Button
-        android:id="@+id/btnChat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="chat" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatListRv"
         android:layout_width="match_parent"

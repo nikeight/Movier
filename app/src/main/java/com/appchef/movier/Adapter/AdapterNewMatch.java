@@ -1,6 +1,7 @@
 package com.appchef.movier.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.appchef.movier.Activity.ConversationActivity;
 import com.appchef.movier.Model.ModelNewMatch;
 import com.appchef.movier.R;
 import com.squareup.picasso.Picasso;
@@ -36,6 +38,7 @@ public class AdapterNewMatch extends RecyclerView.Adapter<AdapterNewMatch.MyHold
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+
         String hisUid = newMatchList.get(position).getUid();
         String profileImage = newMatchList.get(position).getProfileImage();
         String hisName = newMatchList.get(position).getUserName();
@@ -47,6 +50,14 @@ public class AdapterNewMatch extends RecyclerView.Adapter<AdapterNewMatch.MyHold
         } catch (Exception e) {
             Picasso.get().load(R.drawable.ic_account_black).into(holder.profileIv);
         }
+
+        holder.itemView.setOnClickListener(v -> onClickItemView(hisUid));
+    }
+
+    private void onClickItemView(String hisUid) {
+        Intent intent = new Intent(context, ConversationActivity.class);
+        intent.putExtra("hisUid", hisUid);
+        context.startActivity(intent);
     }
 
     @Override

@@ -55,6 +55,8 @@ public class ConversationActivity extends AppCompatActivity {
     ImageButton sendBtn, attachBtn;
     LinearLayout chatLayout;
 
+    LinearLayoutManager linearLayoutManager;
+
     FirebaseAuth mAuth;
     private FirebaseFirestore fstore;
     ValueEventListener seenListener;
@@ -75,27 +77,36 @@ public class ConversationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_conversation);
 
         init();
+
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
 
-//        Intent intent = getIntent();
-//        hisUid =intent.getStringExtra("hisUid");
-        hisUid = "Jvl4yTrixcfMsK7maPyNnxKKnqt1";
-        myUid = "w1oxCS9WH2gnOB9DYdeR2YI5NrB2";
+        getDataViaIntent();
 
         loadHisData();
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setStackFromEnd(true);
-
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerViewLayout();
 
         sendBtn.setOnClickListener(v -> onclickSendBtn());
 
         readMessage();
 
         seenMessage();
+
+        seenMessage();
+    }
+
+    private void recyclerViewLayout() {
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    private void getDataViaIntent() {
+        Intent intent = getIntent();
+        hisUid =intent.getStringExtra("hisUid");
     }
 
     private void onclickSendBtn() {
@@ -139,41 +150,41 @@ public class ConversationActivity extends AppCompatActivity {
 //
 //            }
 //        });
-//
-//        DatabaseReference chatRef1 = FirebaseDatabase.getInstance().getReference("ChatList")
-//                .child(myUid)
-//                .child(hisUid);
-//        chatRef1.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (!snapshot.exists()) {
-//                    chatRef1.child("id").setValue(hisUid);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//        DatabaseReference chatRef2 = FirebaseDatabase.getInstance().getReference("ChatList")
-//                .child(hisUid)
-//                .child(myUid);
-//
-//        chatRef2.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (!snapshot.exists()) {
-//                    chatRef2.child("id").setValue(myUid);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+
+        DatabaseReference chatRef1 = FirebaseDatabase.getInstance().getReference("ChatList")
+                .child(myUid)
+                .child(hisUid);
+        chatRef1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    chatRef1.child("id").setValue(hisUid);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        DatabaseReference chatRef2 = FirebaseDatabase.getInstance().getReference("ChatList")
+                .child(hisUid)
+                .child(myUid);
+
+        chatRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    chatRef2.child("id").setValue(myUid);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void readMessage() {
@@ -210,9 +221,9 @@ public class ConversationActivity extends AppCompatActivity {
                 for (DataSnapshot ds: dataSnapshot.getChildren()){
                     ModelChat chat = ds.getValue(ModelChat.class);
                     if (chat.getReceiver().equals(myUid) && chat.getSender().equals(hisUid)){
-                        HashMap<String, Object> hasSeenHasNap = new HashMap<>();
-                        hasSeenHasNap.put("isSeen", true);
-                        ds.getRef().updateChildren(hasSeenHasNap);
+                        HashMap<String, Object> hasSeenHasMap = new HashMap<>();
+                        hasSeenHasMap.put("isSeen", "true");
+                        ds.getRef().updateChildren(hasSeenHasMap);
                     }
                 }
             }
@@ -240,10 +251,9 @@ public class ConversationActivity extends AppCompatActivity {
     }
 
     private void loadHisData() {
-        Log.d("hisName", "1" );
+        Log.d("hisName", "1 "+hisUid );
         DocumentReference docRef = fstore.collection("users").document(hisUid);
-        docRef
-                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 hisUserName =documentSnapshot.getString("userName");
