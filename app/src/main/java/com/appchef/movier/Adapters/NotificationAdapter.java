@@ -15,6 +15,7 @@ import com.appchef.movier.HomeModel.Users;
 import com.appchef.movier.R;
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
@@ -73,8 +74,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView profileImage, acceptIv, rejectIv;
-        private TextView usernameTv, genderTv;
+        final private ImageView profileImage, acceptIv, rejectIv;
+        final private TextView usernameTv, genderTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

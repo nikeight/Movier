@@ -27,7 +27,7 @@
         </activity>
         <activity android:name=".navBarActivities.HomeActivity" />
         <activity android:name=".navBarActivities.ChatActivity" />
-        <activity android:name=".navBarActivities.NotificaionActivity" />
+        <activity android:name=".navBarActivities.NotificationActivity" />
         <activity android:name=".navBarActivities.ProfileActivity" />
         <activity android:name=".Activity.BaseActivity" />
         <activity android:name=".Activity.RegistrationActivity" />

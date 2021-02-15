@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
                         finishAffinity();
                         break;
                     case R.id.notificationNavBar:
-                        startActivity(new Intent(ProfileActivity.this, NotificaionActivity.class));
+                        startActivity(new Intent(ProfileActivity.this, NotificationActivity.class));
                         overridePendingTransition(0, 0);
                         finishAffinity();
                         break;
