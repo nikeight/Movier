@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import com.appchef.movier.R;
 import com.appchef.movier.navBarActivities.ChatActivity;
 import com.appchef.movier.navBarActivities.HomeActivity;
-import com.appchef.movier.navBarActivities.NotificaionActivity;
+import com.appchef.movier.navBarActivities.NotificationActivity;
 import com.appchef.movier.navBarActivities.ProfileActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -57,7 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
                 actionId = 1;
                 break;
             case 2:
-                startActivity(new Intent(BaseActivity.this, NotificaionActivity.class));
+                startActivity(new Intent(BaseActivity.this, NotificationActivity.class));
                 actionId = 2;
                 break;
             case 3:

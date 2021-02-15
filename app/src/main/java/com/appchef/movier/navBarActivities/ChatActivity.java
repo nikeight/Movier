@@ -8,10 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-import com.appchef.movier.Activity.ConversationActivity;
 import com.appchef.movier.Adapter.AdapterChatList;
 import com.appchef.movier.Adapter.AdapterNewMatch;
 import com.appchef.movier.Model.ModelChat;
@@ -19,8 +16,6 @@ import com.appchef.movier.Model.ModelChatList;
 import com.appchef.movier.Model.ModelNewMatch;
 import com.appchef.movier.Model.ModelUser;
 import com.appchef.movier.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,14 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +109,7 @@ public class ChatActivity extends AppCompatActivity {
                         finishAffinity();
                         break;
                     case R.id.notificationNavBar:
-                        startActivity(new Intent(ChatActivity.this, NotificaionActivity.class));
+                        startActivity(new Intent(ChatActivity.this, NotificationActivity.class));
                         overridePendingTransition(0, 0);
                         finishAffinity();
                         break;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".navBarActivities.NotificaionActivity">
+    tools:context=".navBarActivities.NotificationActivity">
 
     <include layout="@layout/upper_navigation_bar"
         android:id="@+id/notificationUpperNavBar"
