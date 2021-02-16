@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.appchef.movier.R;
+import com.appchef.movier.SharedPreferenceValues.SessionManager;
 import com.appchef.movier.navBarActivities.HomeActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -108,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             mProgressDialog.dismiss();
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+
                             ForwardToRegistrationScreen();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -129,21 +130,6 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void onStart() {
-        super.onStart();
-        Log.d(tag, "In the onStart() event");
-
-        userLoginStatus();
-    }
-
-    private void userLoginStatus() {
-        // Check if the user is signed in or not.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser!= null){
-            // Means there is user already logged IN.
-            ForwardToHomeScreen();
-        }
-    }
 
     private void ForwardToRegistrationScreen(){
         Intent mainIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
@@ -151,11 +137,7 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void ForwardToHomeScreen(){
-        Intent mainIntent = new Intent(LoginActivity.this, HomeActivity.class);
-        startActivity(mainIntent);
-        finish();
-    }
+
 
     public void onRestart() {
         super.onRestart();
