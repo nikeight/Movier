@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.appchef.movier.R;
@@ -57,6 +58,10 @@ public class SplashActivity extends AppCompatActivity {
     private void checkUsersAccessToken(){
         // Check Users details
         String uniqueID = FirebaseAuth.getInstance().getUid();
+
+        if (uniqueID != null)
+            Log.w("UserDetailsSplash", "UniqueToken: -" + SessionManager.getUserToken() + "uniqueId: -" + FirebaseAuth.getInstance().getUid());
+
         String accessToken = SessionManager.getUserToken();
 
         if (uniqueID!= null && accessToken != null){

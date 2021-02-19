@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.appchef.movier.R;
+import com.appchef.movier.SharedPreferenceValues.SessionManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class RegistrationFragment extends Fragment {
 
@@ -151,10 +153,11 @@ public class RegistrationFragment extends Fragment {
     }
 
     private void saveChangesToFireStore() {
-        Map<String,String> userDataMap = new HashMap<String, String>();
+        Map<String,Object> userDataMap = new HashMap<>();
 
         String username = usernameLayout.getEditText().getText().toString();
         String uniqueID = mAuth.getUid();
+        String uniqueKey = SessionManager.getUserToken();
 
         userDataMap.put("fullName",fullNameLayout.getEditText().getText().toString());
         userDataMap.put("username",username);
@@ -162,6 +165,7 @@ public class RegistrationFragment extends Fragment {
         userDataMap.put("gender",genderLayout.getEditText().getText().toString());
         userDataMap.put("contactNumber",contactLayout.getEditText().getText().toString());
         userDataMap.put("uniqueID",uniqueID);
+        userDataMap.put("access_token",uniqueKey);
 
 
         if (uniqueID!=null)
