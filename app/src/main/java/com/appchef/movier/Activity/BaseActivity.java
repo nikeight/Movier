@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.appchef.movier.R;
+import com.appchef.movier.SharedPreferenceValues.SessionManager;
 import com.appchef.movier.navBarActivities.ChatActivity;
 import com.appchef.movier.navBarActivities.HomeActivity;
 import com.appchef.movier.navBarActivities.NotificaionActivity;
 import com.appchef.movier.navBarActivities.ProfileActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public abstract class BaseActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener {

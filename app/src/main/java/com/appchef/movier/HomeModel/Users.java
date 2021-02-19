@@ -2,13 +2,13 @@ package com.appchef.movier.HomeModel;
 
 public class Users {
 
-    String fullName, username, age, gender, imageUrl, contactNumber,uniqueID;
+    String fullName, username, age, gender, imageUrl, contactNumber,uniqueID, access_token;
 
     public Users() {
         // Empty Const. to prevent from crashing.
     }
 
-    public Users(String fullName, String username, String age, String gender, String imageUrl, String contactNumber, String uniqueID) {
+    public Users(String fullName, String username, String age, String gender, String imageUrl, String contactNumber, String uniqueID, String access_token) {
         this.fullName = fullName;
         this.username = username;
         this.age = age;
@@ -16,6 +16,7 @@ public class Users {
         this.imageUrl = imageUrl;
         this.contactNumber = contactNumber;
         this.uniqueID = uniqueID;
+        this.access_token = access_token;
     }
 
     public String getUniqueID() {
@@ -72,5 +73,13 @@ public class Users {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public String getAccess_token() {
+        return access_token;
+    }
+
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
     }
 }

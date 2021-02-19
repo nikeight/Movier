@@ -16,6 +16,7 @@ import com.appchef.movier.HomeModel.Profile;
 import com.appchef.movier.HomeModel.TinderCard;
 import com.appchef.movier.HomeModel.Users;
 import com.appchef.movier.R;
+import com.appchef.movier.SharedPreferenceValues.SessionManager;
 import com.appchef.movier.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -55,6 +56,8 @@ public class HomeActivity extends AppCompatActivity {
         Init();
         gettingUsersList();
         SetUpUpperNavBar();
+        Toast.makeText(this, "onBaseActivity() ", Toast.LENGTH_SHORT).show();
+        Log.w("UserDetailsHome", "UniqueToken: -" + SessionManager.getUserToken() + "uniqueId: -" + FirebaseAuth.getInstance().getUid());
 
     }
 
